@@ -1,0 +1,36 @@
+@import '../sassVariables/variables';
+.display-circular {
+    width: 300px;
+    border-radius: 50%;
+    &.pomodoro {
+        box-shadow: -15px -5px 15px rgb(75, 75, 75);
+        transition: box-shadow $transitionTime;
+        .CircularProgressbar-path {
+            stroke: rgb(240, 73, 73);
+            transition: stroke $transitionTime;
+        }
+        .CircularProgressbar-trail {
+            stroke: rgba(99, 99, 99, 0.3);
+            text-shadow: 2px 2px 2px;
+        }
+        .CircularProgressbar-text {
+            fill: rgb(240, 73, 73);
+            transition: fill $transitionTime;
+        }
+    }
+    &.rest {
+        box-shadow: 15px 5px 15px rgb(75, 75, 75);
+        transition: box-shadow $transitionTime;
+        .CircularProgressbar-path {
+            stroke: rgb(0, 153, 255);
+            transition: stroke $transitionTime;
+        }
+        .CircularProgressbar-trail {
+            stroke: rgba(99, 99, 99, 0.3);
+        }
+        .CircularProgressbar-text {
+            fill: rgb(0, 153, 255);
+            transition: fill $transitionTime;
+        }
+    }
+}

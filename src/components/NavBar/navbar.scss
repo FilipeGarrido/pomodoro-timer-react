@@ -1,0 +1,28 @@
+@import "../sassVariables/variables";
+li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    padding: 0x;
+    &.active {
+        background-color: $bg-color;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        box-shadow: -3px -3px 3px;
+    }
+    &:hover {
+        background-color: $bg-color;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        box-shadow: -3px -3px 3px;
+        cursor: pointer;
+        transition: all 500ms;
+    }
+}
+
+button.navbar-button {
+    font-size: 120%;
+    padding: 15px 20px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}

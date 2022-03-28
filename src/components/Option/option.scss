@@ -1,0 +1,60 @@
+@import "../sassVariables/variables";
+.options {
+    margin: 0 auto;
+    width: 50%;
+    & .slider-pomodoro {
+        height: 40px;
+        border: 2px solid $pomodoroSliderThumbBg;
+        border-radius: 20px;
+        & .thumb {
+            background-color: $pomodoroSliderThumbBg;
+            border: 5px solid $pomodoroSliderThumbBgActive;
+            margin: -5px 0px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            &:active {
+                background-color: $pomodoroSliderThumbBgActive;
+                border: 5px solid $pomodoroSliderThumbBg;
+            }
+        }
+        & .track {
+            opacity: 0.2;
+            background-color: $pomodoroSliderTrackBg;
+            height: 40px;
+            border-radius: 20px;
+        }
+    }
+    & .slider-rest {
+        height: 40px;
+        border: 2px solid $restSliderThumbBg;
+        border-radius: 20px;
+        & .thumb {
+            background-color: $restSliderThumbBg;
+            border: 5px solid $restSliderThumbBgActive;
+            margin: -5px 0px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            &:active {
+                background-color: $restSliderThumbBgActive;
+                border: 5px solid $restSliderThumbBg;
+            }
+        }
+        & .track {
+            opacity: 0.2;
+            background-color: $restSliderTrackBg;
+            height: 40px;
+            border-radius: 20px;
+        }
+    }
+    & .options-label {
+        display: block;
+        margin-bottom: 15px;
+        margin-top: 50px;
+        font-size: 200%;
+        //background-color: aqua;
+    }
+}
