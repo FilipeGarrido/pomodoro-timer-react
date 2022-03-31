@@ -1,28 +1,33 @@
-import React,{ useState , useEffect } from "react";
+import React,{ useContext } from "react";
 import ReactSlider from 'react-slider';
 import "./option.scss";
+import {AppContext} from '../../../data/Store'
 
-export default function Options({pomodoroValue, restValue, changePomodoroValue, changeRestValue}){
+export default function Options(){
+
+    const {workTime , restTime, setWorkTime , setRestTime} = useContext(AppContext)
+
     return(
         <div className="options">
-            <label className="options-label">Work time: {pomodoroValue}:00</label>
+            <h1>Time Configurations:</h1>
+            <label className="options-label">Work time: {workTime}:00</label>
             <ReactSlider 
                 className="slider-pomodoro"
                 thumbClassName="thumb"
                 thumbActiveClassName="thumb-active"
                 trackClassName="track"
-                value={pomodoroValue}
-                onChange={(newValue)=>changePomodoroValue(newValue)}
+                value={workTime}
+                onChange={(newValue) => setWorkTime(newValue) }
                 min={1}
                 max={120}
             />
-            <label className="options-label">Rest time: {restValue}:00</label>
+            <label className="options-label">Rest time: {restTime}:00</label>
             <ReactSlider 
                 className="slider-rest"
                 thumbClassName="thumb"
                 trackClassName="track"
-                value={restValue}
-                onChange={(newValue)=>changeRestValue(newValue)}
+                value={restTime}
+                onChange={(newValue)=>setRestTime(newValue)}
                 min={1}
                 max={120}
             />

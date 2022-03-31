@@ -1,7 +1,12 @@
-@import "../sassVariables/variables";
+@import "../../../components/sassVariables/variables";
 .options {
     margin: 0 auto;
+    margin-top: 5%;
     width: 50%;
+    & h1 {
+        font-size: 150%;
+        letter-spacing: 3px;
+    }
     & .slider-pomodoro {
         height: 40px;
         border: 2px solid $pomodoroSliderThumbBg;
@@ -54,7 +59,7 @@
         display: block;
         margin-bottom: 15px;
         margin-top: 50px;
-        font-size: 200%;
+        font-size: 130%;
         //background-color: aqua;
     }
 }

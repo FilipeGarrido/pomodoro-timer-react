@@ -1,0 +1,8 @@
+@import '../components/sassVariables/variables';
+.Content {
+    display: block;
+    flex-basis: 100%;
+    color: rgb(95, 5, 5);
+    box-shadow: -5px -1px 5px rgb(53, 53, 53);
+    z-index: 0;
+}

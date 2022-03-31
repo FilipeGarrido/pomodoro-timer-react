@@ -1,0 +1,46 @@
+@import '../components/sassVariables/variables';
+.Menu {
+    display: flex;
+    flex-basis: 20%;
+    background-color: rgb(247, 121, 121);
+    font-size: 70%;
+    letter-spacing: 1px;
+    overflow: hidden;
+    & nav {
+        flex: 1;
+        & ul {
+            list-style-type: none;
+            padding: 0;
+            & li {
+                display: flex;
+                & a {
+                    margin-bottom: 5px;
+                    text-decoration: none;
+                    flex: 1;
+                    padding: 15px 25px;
+                    color: white;
+                    transition: all 500ms;
+                    &:hover {
+                        background-color: $bg-color;
+                        border-top-left-radius: 15px;
+                        border-bottom-left-radius: 15px;
+                        box-shadow: $boxShadowMenu;
+                        color: rgb(95, 5, 5);
+                        transition: all 500ms;
+                        z-index: 2;
+                    }
+                    &.active {
+                        background-color: $bg-color;
+                        border-top-left-radius: 15px;
+                        border-bottom-left-radius: 15px;
+                        box-shadow: $boxShadowMenu;
+                        color: rgb(95, 5, 5);
+                        transition: all 500ms;
+                        z-index: 2;
+                        cursor: default;
+                    }
+                }
+            }
+        }
+    }
+}

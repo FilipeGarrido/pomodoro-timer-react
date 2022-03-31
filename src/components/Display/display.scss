@@ -1,10 +1,14 @@
 @import '../sassVariables/variables';
 .display-circular {
-    width: 300px;
+    width: 200px;
     border-radius: 50%;
+    font-size: 70%;
+    box-shadow: -15px -5px 15px rgb(75, 75, 75), inset -23px -13px 23px rgb(75, 75, 75);
+    text-shadow: -5px -5px 5px rgb(75, 75, 75);
     &.pomodoro {
-        box-shadow: -15px -5px 15px rgb(75, 75, 75);
-        transition: box-shadow $transitionTime;
+        //box-shadow: -15px -5px 15px rgb(75, 75, 75), inset -23px -13px 23px rgb(75, 75, 75);
+        //text-shadow: -5px -5px 5px rgb(75, 75, 75);
+        transition: all $transitionTime;
         .CircularProgressbar-path {
             stroke: rgb(240, 73, 73);
             transition: stroke $transitionTime;
@@ -19,8 +23,9 @@
         }
     }
     &.rest {
-        box-shadow: 15px 5px 15px rgb(75, 75, 75);
-        transition: box-shadow $transitionTime;
+        //box-shadow: 15px 5px 15px rgb(75, 75, 75), inset 23px 3px 23px rgb(75, 75, 75);
+        //text-shadow: 5px 5px 5px rgb(75, 75, 75);
+        transition: all $transitionTime;
         .CircularProgressbar-path {
             stroke: rgb(0, 153, 255);
             transition: stroke $transitionTime;

@@ -1,33 +1,31 @@
-import React from "react";
+import React ,{ useContext } from "react";
 import propTypes from "prop-types";
 import "./navbar.scss";
+import {AppContext} from '../../data/Store'
 
-export default function NavBar({titlePage, screenSelector, screenClassSelector}){
-
-    let classSelector = "";
+export default function NavBar({titlePage}){
   
+    const {screenType , setScreenType } = useContext(AppContext)
 
-    let screenSelection = (event)=>{
-        screenSelector(event.target.accessKey); 
+    const screenSelection = (event)=>{
+        setScreenType(event.target.accessKey); 
     }
 
     const changeClass = () => {
 
-        let classSelector = "";
-
-        if(titlePage == screenClassSelector){
-            classSelector = "active";
+        if(titlePage == screenType){
+            return "active";
         }else{
-            classSelector = "deactive";
+            return "deactive";
         }
-        return classSelector;
     }
 
     return(
-        <li key={titlePage} className={changeClass()}><button className="navbar-button" onClick={(event)=>{
-            screenSelection(event);
-            changeClass();
-        }} accessKey={titlePage}>{titlePage}</button></li>
+        <li key={titlePage} className={'Navbar ' + changeClass() + ' ' + titlePage}>
+            <button className="navbar-button" 
+                    onClick={(event)=>{ screenSelection(event); changeClass();}} 
+                    accessKey={titlePage}>{titlePage}</button>
+        </li>
     );
 
     

@@ -1,21 +1,24 @@
-import React,{ useState , useEffect } from "react";
-import PlayIcon from "../../images/play.png";
-import PauseIcon from "../../images/pause.png";
-import ResetIcon from "../../images/repeat.png";
+import React,{ useState , useEffect , useContext } from "react";
+import {AppContext} from '../../../data/Store'
+import PlayIcon from "../../../images/play.png";
+import PauseIcon from "../../../images/pause.png";
+import ResetIcon from "../../../images/repeat.png";
 import "./clock.scss";
-import Display from "../Display/Display";
-import Button from "../Button/Button";
-import Alarm from "../../audio/despertadorEletronico.mp3";
+import Display from "../../../components/Display/Display";
+import Button from "../../../components/Button/Button";
+import Alarm from "../../../audio/despertadorEletronico.mp3";
 
 
 
-export default function Clock({clockType, pomodoroValue, restValue}){
+export default function Clock(){
+
+    const { screenType, workTime , restTime } = useContext(AppContext)
     
     const[started , setStarted] = useState(false);
     const[showTime, setShowTime]  = useState(''); 
-    const[minutesCount , setMinutesCount] = useState(() => clockType == 'Pomodoro' ? pomodoroValue : restValue);
+    const[minutesCount , setMinutesCount] = useState(() => screenType == 'Work' ? workTime : restTime);
     const[secondsCount, setSecondsCount] = useState(0);
-    const[tiks, setTiks] = useState(()=>clockType == 'Pomodoro' ? pomodoroValue*60 : restValue*60);
+    const[tiks, setTiks] = useState(()=>screenType == 'Work' ? workTime*60 : restTime*60);
     const[finished, setFinished] = useState(false);
     const [alarmSound] = useState(new Audio(Alarm));
     
@@ -25,8 +28,8 @@ export default function Clock({clockType, pomodoroValue, restValue}){
         }if(btnType == 'pause'){
             setStarted(false);
         }if(btnType == 'reset'){
-            clockType == 'Pomodoro' ? setMinutesCount(pomodoroValue) : setMinutesCount(restValue);
-            clockType == 'Pomodoro' ? setTiks(pomodoroValue*60) : setTiks(restValue*60);
+            screenType == 'Work' ? setMinutesCount(workTime) : setMinutesCount(restTime);
+            screenType == 'Work' ? setTiks(workTime*60) : setTiks(restTime*60);
             setFinished(false)
             setStarted(false);    
             setSecondsCount(0);
@@ -36,8 +39,8 @@ export default function Clock({clockType, pomodoroValue, restValue}){
     }
 
     useEffect(()=>{
-        clockType == 'Pomodoro' ? setMinutesCount(pomodoroValue) : setMinutesCount(restValue);
-        clockType == 'Pomodoro' ? setTiks(pomodoroValue*60) : setTiks(restValue*60);
+        screenType == 'Work' ? setMinutesCount(workTime) : setMinutesCount(restTime);
+        screenType == 'Work' ? setTiks(workTime*60) : setTiks(restTime*60);
         setFinished(false);
         setSecondsCount(0);
         setShowTime(minutesCount+":"+('000' + secondsCount).slice(-2));
@@ -45,7 +48,7 @@ export default function Clock({clockType, pomodoroValue, restValue}){
         alarmSound.pause();
         alarmSound.currentTime = 0;
 
-    },[clockType]);
+    },[screenType]);
 
     useEffect(()=>{
 
@@ -95,9 +98,9 @@ export default function Clock({clockType, pomodoroValue, restValue}){
                     time={tiks}
                     setTime = {setTiks} 
                     showingTime={showTime} 
-                    clockType={clockType} 
-                    pomodoroValue={pomodoroValue}
-                    restValue={restValue}/>
+                    clockType={screenType} 
+                    workTime={workTime}
+                    restTime={restTime}/>
             </div>
             <div className="btns">
                 <Button btnClass="start" btnTitle="Start" btnImage={PlayIcon} isPressed ={btnPressed} />

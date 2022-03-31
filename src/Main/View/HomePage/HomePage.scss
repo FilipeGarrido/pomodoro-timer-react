@@ -1,0 +1,26 @@
+.HomePage {
+    position: absolute;
+    display: block;
+    height: 100vh;
+    background-image: url('../../../images/pomodoro_logo.png');
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    & h1 {
+        display: block;
+        margin-top: 15%;
+        padding-top: 0;
+        text-shadow: 5px 5px 5px rgb(29, 29, 29);
+        font-size: 500%;
+        -webkit-text-stroke: 3px black;
+        transition: all 500ms;
+        &:hover {
+            cursor: default;
+            font-size: 550%;
+            -webkit-text-stroke: 3px White;
+            animation: rotate(60deg);
+            transition: all 500ms;
+        }
+    }
+}

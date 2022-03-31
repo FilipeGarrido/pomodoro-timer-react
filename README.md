@@ -8,7 +8,4 @@ An app that users can start a timer for work or study and then start a timer for
 The time can be configured in the config tab.
 
 ## Concepts learned and apllied
-In this project React hooks were applied, such as useState e useEffect.
-
-
-
+In this project, React hooks and some implementations of react-router-dom were applied, such as useState, useEffect and useContext, from React hooks, and BrowserRouter , Route, Link and Switch from react-router-dom.
