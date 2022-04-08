@@ -9,3 +9,7 @@ The time can be configured in the config tab.
 
 ## Concepts learned and apllied
 In this project, React hooks and some implementations of react-router-dom were applied, such as useState, useEffect and useContext, from React hooks, and BrowserRouter , Route, Link and Switch from react-router-dom.
+
+## App access
+
+To view the application running access: [https://pomodoro-timer-react-flame.vercel.app](https://pomodoro-timer-react-flame.vercel.app)
