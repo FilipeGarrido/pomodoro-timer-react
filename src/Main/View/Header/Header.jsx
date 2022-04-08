@@ -10,7 +10,8 @@ export default function Header(){
             <h1>Pomodoro Clock:</h1>
             <ul>
                 <NavBar titlePage="Work"/>
-                <NavBar titlePage="Rest"/>
+                <NavBar titlePage="Short Rest"/>
+                <NavBar titlePage="Long Rest"/>
             </ul>
         </div>
     );

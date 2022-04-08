@@ -5,7 +5,7 @@ import {AppContext} from '../../../data/Store'
 
 export default function Options(){
 
-    const {workTime , restTime, setWorkTime , setRestTime} = useContext(AppContext)
+    const {workTime , shortRestTime , longRestTime , setWorkTime , setShortRestTime , setLongRestTime } = useContext(AppContext)
 
     return(
         <div className="options">
@@ -21,13 +21,23 @@ export default function Options(){
                 min={1}
                 max={120}
             />
-            <label className="options-label">Rest time: {restTime}:00</label>
+            <label className="options-label">Short Rest time: {shortRestTime}:00</label>
             <ReactSlider 
-                className="slider-rest"
+                className="slider-rest short"
                 thumbClassName="thumb"
                 trackClassName="track"
-                value={restTime}
-                onChange={(newValue)=>setRestTime(newValue)}
+                value={shortRestTime}
+                onChange={(newValue)=>setShortRestTime(newValue)}
+                min={1}
+                max={120}
+            />
+            <label className="options-label">Long Rest time: {longRestTime}:00</label>
+            <ReactSlider 
+                className="slider-rest long"
+                thumbClassName="thumb"
+                trackClassName="track"
+                value={longRestTime}
+                onChange={(newValue)=>setLongRestTime(newValue)}
                 min={1}
                 max={120}
             />

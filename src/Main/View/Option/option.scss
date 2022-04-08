@@ -33,26 +33,46 @@
     }
     & .slider-rest {
         height: 40px;
-        border: 2px solid $restSliderThumbBg;
         border-radius: 20px;
         & .thumb {
-            background-color: $restSliderThumbBg;
-            border: 5px solid $restSliderThumbBgActive;
             margin: -5px 0px;
             cursor: pointer;
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            &:active {
-                background-color: $restSliderThumbBgActive;
-                border: 5px solid $restSliderThumbBg;
-            }
         }
         & .track {
             opacity: 0.2;
-            background-color: $restSliderTrackBg;
             height: 40px;
             border-radius: 20px;
+        }
+        &.short {
+            border: 2px solid $shortRestSliderThumbBg;
+            & .thumb {
+                background-color: $shortRestSliderThumbBg;
+                border: 5px solid $shortRestSliderThumbBgActive;
+                &:active {
+                    background-color: $shortRestSliderThumbBgActive;
+                    border: 5px solid $shortRestSliderThumbBg;
+                }
+            }
+            & .track {
+                background-color: $shortRestSliderTrackBg;
+            }
+        }
+        &.long {
+            border: 2px solid $longRestSliderThumbBg;
+            & .thumb {
+                background-color: $longRestSliderThumbBg;
+                border: 5px solid $longRestSliderThumbBgActive;
+                &:active {
+                    background-color: $longRestSliderThumbBgActive;
+                    border: 5px solid $longRestSliderThumbBg;
+                }
+            }
+            & .track {
+                background-color: $longRestSliderTrackBg;
+            }
         }
     }
     & .options-label {

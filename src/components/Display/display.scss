@@ -10,7 +10,7 @@
         //text-shadow: -5px -5px 5px rgb(75, 75, 75);
         transition: all $transitionTime;
         .CircularProgressbar-path {
-            stroke: rgb(240, 73, 73);
+            stroke: $workPathColor;
             transition: stroke $transitionTime;
         }
         .CircularProgressbar-trail {
@@ -18,23 +18,39 @@
             text-shadow: 2px 2px 2px;
         }
         .CircularProgressbar-text {
-            fill: rgb(240, 73, 73);
+            fill: $workTextColor;
             transition: fill $transitionTime;
         }
     }
-    &.rest {
+    &.short-rest {
         //box-shadow: 15px 5px 15px rgb(75, 75, 75), inset 23px 3px 23px rgb(75, 75, 75);
         //text-shadow: 5px 5px 5px rgb(75, 75, 75);
         transition: all $transitionTime;
         .CircularProgressbar-path {
-            stroke: rgb(0, 153, 255);
+            stroke: $shortResPathColor;
             transition: stroke $transitionTime;
         }
         .CircularProgressbar-trail {
             stroke: rgba(99, 99, 99, 0.3);
         }
         .CircularProgressbar-text {
-            fill: rgb(0, 153, 255);
+            fill: $shortResTextColor;
+            transition: fill $transitionTime;
+        }
+    }
+    &.long-rest {
+        //box-shadow: 15px 5px 15px rgb(75, 75, 75), inset 23px 3px 23px rgb(75, 75, 75);
+        //text-shadow: 5px 5px 5px rgb(75, 75, 75);
+        transition: all $transitionTime;
+        .CircularProgressbar-path {
+            stroke: $longResPathColor;
+            transition: stroke $transitionTime;
+        }
+        .CircularProgressbar-trail {
+            stroke: rgba(99, 99, 99, 0.3);
+        }
+        .CircularProgressbar-text {
+            fill: $longResTextColor;
             transition: fill $transitionTime;
         }
     }

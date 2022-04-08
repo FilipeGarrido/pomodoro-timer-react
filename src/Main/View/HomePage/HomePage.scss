@@ -1,26 +1,38 @@
 .HomePage {
-    position: absolute;
-    display: block;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     height: 100vh;
-    background-image: url('../../../images/pomodoro_logo.png');
-    background-origin: content-box;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
     & h1 {
-        display: block;
+        position: relative;
+        z-index: 1;
+        margin: 0 auto;
         margin-top: 15%;
+        margin-bottom: -200%;
         padding-top: 0;
         text-shadow: 5px 5px 5px rgb(29, 29, 29);
-        font-size: 500%;
+        font-size: 450%;
         -webkit-text-stroke: 3px black;
         transition: all 500ms;
         &:hover {
             cursor: default;
-            font-size: 550%;
+            font-size: 500%;
             -webkit-text-stroke: 3px White;
             animation: rotate(60deg);
             transition: all 500ms;
+            margin-bottom: -46%;
         }
+    }
+    & div.svg {
+        padding: 0;
+        margin-left: 23%;
+        width: 60%;
+        position: relative;
+        z-index: 0;
+        background-image: url('../../../images/pomodoro_logo.png');
+        background-origin: content-box;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
     }
 }

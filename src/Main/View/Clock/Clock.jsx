@@ -12,15 +12,15 @@ import Alarm from "../../../audio/despertadorEletronico.mp3";
 
 export default function Clock(){
 
-    const { screenType, workTime , restTime } = useContext(AppContext)
+    const { screenType, workTime , shortRestTime, longRestTime } = useContext(AppContext)
     
     const[started , setStarted] = useState(false);
     const[showTime, setShowTime]  = useState(''); 
-    const[minutesCount , setMinutesCount] = useState(() => screenType == 'Work' ? workTime : restTime);
+    const[minutesCount , setMinutesCount] = useState(() => screenType == 'Work' ? workTime : screenType == 'Long Rest' ? longRestTime: shortRestTime);
     const[secondsCount, setSecondsCount] = useState(0);
-    const[tiks, setTiks] = useState(()=>screenType == 'Work' ? workTime*60 : restTime*60);
+    const[tiks, setTiks] = useState(()=>screenType == 'Work' ? workTime*60 : screenType == 'Long Rest' ? longRestTime*60 : shortRestTime*60);
     const[finished, setFinished] = useState(false);
-    const [alarmSound] = useState(new Audio(Alarm));
+    const[alarmSound] = useState(new Audio(Alarm));
     
     const btnPressed = (btnType)=>{
         if(btnType == 'start'){
@@ -28,8 +28,8 @@ export default function Clock(){
         }if(btnType == 'pause'){
             setStarted(false);
         }if(btnType == 'reset'){
-            screenType == 'Work' ? setMinutesCount(workTime) : setMinutesCount(restTime);
-            screenType == 'Work' ? setTiks(workTime*60) : setTiks(restTime*60);
+            screenType == 'Work' ? setMinutesCount(workTime) : screenType == 'Long Rest' ? setMinutesCount(longRestTime): setMinutesCount(shortRestTime);
+            screenType == 'Work' ? setTiks(workTime*60) : screenType == 'Long Rest' ? setTiks(longRestTime*60): setTiks(shortRestTime*60);
             setFinished(false)
             setStarted(false);    
             setSecondsCount(0);
@@ -39,8 +39,8 @@ export default function Clock(){
     }
 
     useEffect(()=>{
-        screenType == 'Work' ? setMinutesCount(workTime) : setMinutesCount(restTime);
-        screenType == 'Work' ? setTiks(workTime*60) : setTiks(restTime*60);
+        screenType == 'Work' ? setMinutesCount(workTime) : screenType == 'Long Rest' ? setMinutesCount(longRestTime): setMinutesCount(shortRestTime);
+        screenType == 'Work' ? setTiks(workTime*60) : screenType == 'Long Rest' ? setTiks(longRestTime*60): setTiks(shortRestTime*60);
         setFinished(false);
         setSecondsCount(0);
         setShowTime(minutesCount+":"+('000' + secondsCount).slice(-2));
@@ -71,7 +71,6 @@ export default function Clock(){
                     }else{
                         if(seconds<0){
                             alarmSound.play();
-                            console.log(alarmSound);
                             setFinished(true);
                             setMinutesCount(0);
                             setSecondsCount(0);
@@ -96,16 +95,13 @@ export default function Clock(){
             <div className="timer-display">
                     <Display 
                     time={tiks}
-                    setTime = {setTiks} 
                     showingTime={showTime} 
-                    clockType={screenType} 
-                    workTime={workTime}
-                    restTime={restTime}/>
+                    />
             </div>
             <div className="btns">
-                <Button btnClass="start" btnTitle="Start" btnImage={PlayIcon} isPressed ={btnPressed} />
-                <Button btnClass="pause" btnTitle="Pause" btnImage={PauseIcon} isPressed ={btnPressed} />
-                <Button btnClass="reset" btnTitle="Reset" btnImage={ResetIcon} isPressed ={btnPressed} />
+                <Button btnClass="start" btnTitle="Start Button" btnImage={PlayIcon} isPressed ={btnPressed} active={started}/>
+                <Button btnClass="pause" btnTitle="Pause Button" btnImage={PauseIcon} isPressed ={btnPressed} active={started} />
+                <Button btnClass="reset" btnTitle="Reset Button" btnImage={ResetIcon} isPressed ={btnPressed} active={started} />
             </div>
         </div>
     );

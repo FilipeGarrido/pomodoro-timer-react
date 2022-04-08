@@ -20,16 +20,32 @@
             transition: all 500ms;
         }
     }
-    &.Rest {
-        background-color: $restButtonBg;
+    &.Long {
+        background-color: $longRestButtonBg;
         transition: all 500ms;
         &.active {
-            background-color: $restButtonBgActive;
+            background-color: $longRestButtonBgActive;
             border-radius: 5px;
             box-shadow: -3px -3px 3px;
         }
         &:hover {
-            background-color: $restButtonBgActive;
+            background-color: $longRestButtonBgActive;
+            border-radius: 5px;
+            box-shadow: -3px -3px 3px;
+            cursor: pointer;
+            transition: all 500ms;
+        }
+    }
+    &.Short {
+        background-color: $shortRestButtonBg;
+        transition: all 500ms;
+        &.active {
+            background-color: $shortRestButtonBgActive;
+            border-radius: 5px;
+            box-shadow: -3px -3px 3px;
+        }
+        &:hover {
+            background-color: $shortRestButtonBgActive;
             border-radius: 5px;
             box-shadow: -3px -3px 3px;
             cursor: pointer;

@@ -1,25 +1,69 @@
-//Body variables
+//++++++++++++++++++
+//++Body variables++
+//++++++++++++++++++
 $bg-color:rgb(226, 184, 184);
-//Buttons variables
+//
+//++++++++++++++++++
+//++Buttons colors++
+//++++++++++++++++++
+// play colors
 $playBorderColor: rgb(12, 116, 12);
 $playBackgroundColor: rgb(118, 233, 118);
+// pause colors
 $stopBorderColor: rgb(138, 24, 24);
 $stopBackgroundColor: rgb(248, 152, 152);
+// reset colors
 $resetBorderColor: rgb(9, 76, 138);
 $resetBackgroundColor: rgb(80, 199, 235);
-//Config variables
-$restSliderThumbBg: rgb(0, 153, 255);
-$restSliderThumbBgActive:rgb(1, 73, 121);
-$restSliderTrackBg:rgb(1, 73, 121);
+//
+//+++++++++++++++++++++++++
+//++Config Sliders Colors++
+//+++++++++++++++++++++++++
+//  short colors
+$shortRestSliderThumbBg: rgb(250, 245, 158);
+$shortRestSliderThumbBgActive:rgb(255, 242, 0);
+$shortRestSliderTrackBg:rgb(153, 146, 7);
+//  long colors
+$longRestSliderThumbBg: rgb(188, 255, 143);
+$longRestSliderThumbBgActive:rgb(102, 255, 0);
+$longRestSliderTrackBg:rgb(80, 200, 0);
+//  work colors
 $pomodoroSliderThumbBg: rgb(230, 33, 33);
 $pomodoroSliderThumbBgActive:rgb(95, 6, 6);
 $pomodoroSliderTrackBg:rgba(95, 6, 6, 0.3);
-//Display variables
+//
+//+++++++++++++++++++++
+//++Display variables++
+//+++++++++++++++++++++
 $transitionTime: 2000ms;
-//NavBar
+//
+//++++++++++++++++++
+//++Display colors++
+//++++++++++++++++++
+//  short colors
+$shortResPathColor:rgb(251, 255, 0);
+$shortResTextColor:rgb(251, 255, 0);
+//  long colors
+$longResPathColor:rgb(43, 255, 0);
+$longResTextColor:rgb(43, 255, 0);
+//  work colors
+$workPathColor:rgb(240, 73, 73);
+$workTextColor:rgb(240, 73, 73);
+//
+//+++++++++++++++++
+//++NavBar colors++
+//+++++++++++++++++
+//  short colors
+$shortRestButtonBg: rgb(245, 255, 152);
+$shortRestButtonBgActive: rgb(223, 248, 0);
+//  long colors
+$longRestButtonBg: rgb(156, 255, 129);
+$longRestButtonBgActive: rgb(55, 255, 0);
+//  work colors
 $pomodoroButtonBg: rgb(225, 107, 107);
 $pomodoroButtonBgActive: rgb(212, 64, 64);
-$restButtonBg: rgb(131, 198, 243);
-$restButtonBgActive: rgb(63, 163, 230);
-//Menu
+//
+//++++++++
+//++Menu++
+//++++++++
 $boxShadowMenu: 0px 5px 5px rgb(53, 53, 53);

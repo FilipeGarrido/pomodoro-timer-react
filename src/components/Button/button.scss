@@ -18,12 +18,22 @@
                 color: $playBackgroundColor;
                 background-color: $playBorderColor;
             }
+            &.pressed {
+                border-color: $playBackgroundColor;
+                color: $playBackgroundColor;
+                background-color: $playBorderColor;
+            }
         }
         &.pause {
             border-color: $stopBorderColor;
             color: $stopBorderColor;
             background-color: $stopBackgroundColor;
             &:hover {
+                border-color: $stopBackgroundColor;
+                color: $stopBackgroundColor;
+                background-color: $stopBorderColor;
+            }
+            &.pressed {
                 border-color: $stopBackgroundColor;
                 color: $stopBackgroundColor;
                 background-color: $stopBorderColor;
@@ -40,6 +50,10 @@
             }
         }
         &:hover {
+            box-shadow: none;
+            transition: all 200ms;
+        }
+        &.pressed {
             box-shadow: none;
             transition: all 200ms;
         }
